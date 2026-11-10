@@ -8,12 +8,10 @@ class Barbeiro(threading.Thread):
         super().__init__()
         self.barbearia = barbearia
         self.tempo_corte = tempo_corte
-        # daemon=True faz a thread encerrar quando o programa principal acabar
         self.daemon = True 
 
     def run(self):
         while True:
-            # Interage com o monitor (Barbearia)
             self.barbearia.barbeiro_chama_proximo()
             self.cortar_cabelo()
 
