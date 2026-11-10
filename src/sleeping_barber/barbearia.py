@@ -11,7 +11,7 @@ class Barbearia:
 
     def barbeiro_chama_proximo(self):
         """Chamado pelo Barbeiro: dorme se não há clientes, ou chama o próximo."""
-        print("💤 [Barbeiro] Sem clientes. Tirando um cochilo...")
+        print("[Barbeiro] Sem clientes. Tirando um cochilo...")
 
         self.sem_clientes.acquire()
         
@@ -26,7 +26,7 @@ class Barbearia:
         
         if self.clientes_esperando < self.num_cadeiras:
             self.clientes_esperando += 1
-            print(f"🚶 [Cliente {id_cliente}] Entrou. (Espera: {self.clientes_esperando}/{self.num_cadeiras})")
+            print(f"[Cliente {id_cliente}] Entrou. (Espera: {self.clientes_esperando}/{self.num_cadeiras})")
 
             self.sem_clientes.release()
             self.mutex.release()
